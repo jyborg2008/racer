@@ -1,0 +1,20 @@
+{
+    "name": "racer",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.23"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj"
+}
