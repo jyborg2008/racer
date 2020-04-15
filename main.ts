@@ -95,6 +95,9 @@ b b b b b b b b b b b b b b b b
 c c c c c c c c c c c c c c c c 
 `
 }
+controller.combos.attachCombo("ab", function () {
+    mySprite.setVelocity(150, 0)
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
     game.over(true)
 })
@@ -102,9 +105,6 @@ controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     if (info.score() == 1) {
         mySprite.setVelocity(60, 0)
     }
-})
-controller.combos.attachCombo("aabaababba", function () {
-    mySprite.setVelocity(150, 0)
 })
 scene.onOverlapTile(SpriteKind.Projectile, myTiles.tile4, function (sprite, location) {
     game.splash("red wins")
@@ -142,7 +142,7 @@ let mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Projectile)
 mySprite3.setPosition(22, 104)
-mySprite3.setVelocity(45, 0)
+mySprite3.setVelocity(Math.randomRange(35, 80), 0)
 let mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . 6 6 6 6 6 6 6 6 . . . . 
@@ -162,19 +162,19 @@ let mySprite2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Food)
 mySprite2.setPosition(22, 136)
-mySprite2.setVelocity(41, 50)
+mySprite2.setVelocity(Math.randomRange(35, 80), 50)
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . 6 8 6 6 6 6 6 6 c 6 . . . 
-. . 6 c 8 6 6 6 6 6 6 c c 6 . . 
-. 6 c c 8 8 8 8 8 8 6 c c 4 6 d 
-. 6 c 6 e e e e e e e b c 4 6 6 
-. 6 6 e 9 9 e 9 9 9 e e b 4 6 6 
-. 6 e 9 9 9 e 9 9 9 9 e 6 6 6 6 
-. e e 9 9 9 e 9 9 9 9 9 e 6 6 6 
-. e e e e e e f e e e f e 6 d d 
-. e e e e e e f e e f e e e 6 d 
+. . . . c c c c c c c c . . . . 
+. . . c 8 c c c c c c c c . . . 
+. . c c 8 c c c c c c c c c . . 
+. c c c 8 8 8 8 8 8 c c c 4 c b 
+. c c c e e e e e e e b c 4 c c 
+. c c e 9 9 e 9 9 9 e e b 4 c c 
+. c e 9 9 9 e 9 9 9 9 e c c c c 
+. e e 9 9 9 e 9 9 9 9 9 e c c c 
+. e e e e e e f e e e f e c b b 
+. e e e e e e f e e f e e e c b 
 . e e e e e e f f f e e e e e e 
 . e f f f f e e e e f f f e e e 
 . . f f f f f e e f f f f f e . 
